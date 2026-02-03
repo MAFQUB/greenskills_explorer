@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Security: Basic Content Security Policy to allow CDNs -->
     <title>GreenSkills NI: Management & Design Navigator</title>
 
     <!-- External Assets -->
@@ -41,7 +40,6 @@
             animation: fadeIn 0.4s ease-out forwards;
         }
 
-        /* Hide scrollbars for cleaner filter bar on mobile */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -86,7 +84,7 @@
         <div class="bg-white p-2 rounded-2xl shadow-xl border border-slate-200 mb-12 flex flex-col md:flex-row gap-2">
             <div class="relative flex-1">
                 <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-                <input type="text" id="searchInput" placeholder="Search by course, skill, or academic lead..."
+                <input type="text" id="searchInput" placeholder="Search by course, skill, HLA, or academic lead..."
                     class="w-full pl-12 pr-4 py-4 rounded-xl border-none focus:ring-2 focus:ring-emerald-500 text-slate-700 bg-slate-50/50">
             </div>
             <div class="flex gap-1 p-1 bg-slate-100 rounded-xl no-scrollbar overflow-x-auto">
@@ -101,41 +99,9 @@
             </div>
         </div>
 
-        <!-- Role Descriptions (Static but informative) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-            <div class="bg-white p-5 rounded-xl border border-slate-200 flex gap-4 items-start shadow-sm">
-                <div class="bg-emerald-100 text-emerald-700 p-3 rounded-lg"><i class="fas fa-pencil-ruler"></i></div>
-                <div>
-                    <h4 class="font-bold text-sm">Design</h4>
-                    <p class="text-[11px] text-slate-500 uppercase font-medium">Specifications & Fabric</p>
-                </div>
-            </div>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 flex gap-4 items-start shadow-sm">
-                <div class="bg-blue-100 text-blue-700 p-3 rounded-lg"><i class="fas fa-chart-line"></i></div>
-                <div>
-                    <h4 class="font-bold text-sm">Analysis</h4>
-                    <p class="text-[11px] text-slate-500 uppercase font-medium">EPCs & Carbon Audits</p>
-                </div>
-            </div>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 flex gap-4 items-start shadow-sm">
-                <div class="bg-amber-100 text-amber-700 p-3 rounded-lg"><i class="fas fa-users-cog"></i></div>
-                <div>
-                    <h4 class="font-bold text-sm">Management</h4>
-                    <p class="text-[11px] text-slate-500 uppercase font-medium">Funding & Logistics</p>
-                </div>
-            </div>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 flex gap-4 items-start shadow-sm">
-                <div class="bg-purple-100 text-purple-700 p-3 rounded-lg"><i class="fas fa-tools"></i></div>
-                <div>
-                    <h4 class="font-bold text-sm">Integration</h4>
-                    <p class="text-[11px] text-slate-500 uppercase font-medium">Trade Coordination</p>
-                </div>
-            </div>
-        </div>
-
         <!-- Course Grid -->
         <div id="courseGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <!-- Dynamically populated -->
+            <!-- Populated via JavaScript -->
         </div>
 
         <!-- Empty State -->
@@ -145,7 +111,7 @@
                 <i class="fas fa-wind text-3xl"></i>
             </div>
             <h3 class="text-xl font-bold text-slate-700">No matching pathways found</h3>
-            <p class="text-slate-500 mt-2">Try adjusting your filters or search terms.</p>
+            <p class="text-slate-500 mt-2">Try adjusting your filters or search terms (e.g., "HLA").</p>
         </div>
 
     </main>
@@ -156,8 +122,7 @@
                 <h2 class="text-white text-xl font-bold mb-4">About Greenskills NI</h2>
                 <p class="text-sm leading-relaxed max-w-md">
                     This reporting tool supports the Department for the Economy (DfE) in identifying the professional
-                    skills gap for climate-resilient housing. Our focus is on the design and management layer required
-                    to scale retrofitting across Northern Ireland.
+                    skills gap for climate-resilient housing.
                 </p>
                 <div class="flex gap-4 mt-8">
                     <img src="https://www.qub.ac.uk/brand/v3/assets/img/logos/qub-logo.svg" alt="QUB"
@@ -165,41 +130,39 @@
                 </div>
             </div>
             <div class="text-right">
-                <p class="text-xs uppercase tracking-widest font-bold text-slate-500 mb-2">Privacy & Security Notice</p>
-                <p class="text-[10px] italic">Staff emails are obfuscated to prevent harvesting by automated bots. For
-                    official partnership enquiries, please contact the respective schools through university
-                    directories.</p>
+                <p class="text-xs uppercase tracking-widest font-bold text-slate-500 mb-2">Privacy & Security</p>
+                <p class="text-[10px] italic">Developed with Gemini. Emails are obfuscated to deter automated scraping.
+                </p>
             </div>
         </div>
     </footer>
 
     <script>
-        /**
-         * COURSE DATABASE
-         * To update this site, simply add or edit objects in this array.
-         */
         const courseData = [
+            // QUB Standard Courses
             { id: 1, uni: "QUB", level: "MSc", title: "Net Zero Engineering", focus: "Carbon footprinting, life cycle analysis, and technical pathways for building retrofit.", owner: "Dr. Neil Robinson", contact: "bi5yb2JpbnNvbkBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/net-zero-engineering-msc/", tags: ["Engineering", "Assessment", "Net Zero"] },
             { id: 2, uni: "QUB", level: "MSc", title: "City Planning & Design", focus: "Low-carbon urban transition and RICS-accredited spatial planning for housing.", owner: "Dr. Neil Galway", contact: "bi5nYWx3YXlAcXViLmFjLnVr", link: "https://www.qub.ac.uk/courses/postgraduate-taught/city-planning-design-msc/", tags: ["Planning", "Design", "Policy"] },
-            { id: 3, uni: "QUB", level: "MSc", title: "Construction & Project Management", focus: "Managing the logistics, finance, and risks of high-volume housing decarbonisation.", owner: "Dr. Faris Elghaish", contact: "Zi5lbGdoYWlzaEBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/construction-project-management-msc/", tags: ["Management", "Finance", "Construction"] },
-            { id: 4, uni: "QUB", level: "MSc", title: "BIM Project Management", focus: "Digital twins and data-driven thermal efficiency design for existing stock.", owner: "School of SNBE", contact: "c25iZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/building-information-modelling-project-management-msc/", tags: ["Digital", "BIM", "Design"] },
+            { id: 3, uni: "QUB", level: "MSc", title: "Construction & Project Management", focus: "Managing the logistics, finance, and risks of large-scale housing decarbonisation projects.", owner: "Dr. Faris Elghaish", contact: "Zi5lbGdoYWlzaEBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/construction-project-management-msc/", tags: ["Management", "Finance", "Construction"] },
+            { id: 4, uni: "QUB", level: "MSc", title: "BIM Project Management", focus: "Digital twins and data-driven thermal efficiency design for existing building stock.", owner: "School of SNBE", contact: "c25iZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/building-information-modelling-project-management-msc/", tags: ["Digital", "BIM", "Design"] },
             { id: 5, uni: "QUB", level: "MSc", title: "Leadership for Sustainable Dev", focus: "Strategic change management and coordination between government and industry.", owner: "Dr. Adewale Adenuga", contact: "YS5hZGVudWdhQHF1Yi5hYy51aw==", link: "https://www.qub.ac.uk/courses/postgraduate-taught/leadership-sustainable-development-msc/", tags: ["Leadership", "Strategy", "Policy"] },
             { id: 6, uni: "QUB", level: "BSc", title: "Architecture", focus: "Foundational energy-efficient building fabric design and retrofit principles.", owner: "School of Architecture", contact: "YXJjaGl0ZWN0dXJlQHF1Yi5hYy51aw==", link: "https://www.qub.ac.uk/courses/undergraduate/architecture-bsc/", tags: ["Design", "Undergraduate"] },
+
+            // QUB HLA Courses (Separate Offerings)
+            { id: 14, uni: "QUB", level: "MSc / HLA", title: "Construction & Project Management (HLA)", focus: "EPS Faculty Higher Level Apprenticeship pathway for advanced construction management.", owner: "Dr. Faris Elghaish", contact: "Zi5lbGdoYWlzaEBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/construction-project-management-higher-level-apprenticeship-msc/", tags: ["Management", "HLA", "EPS", "Construction"] },
+            { id: 15, uni: "QUB", level: "MSc / HLA", title: "BIM Project Management (HLA)", focus: "Dedicated EPS HLA pathway focusing on Digital Twins and BIM in a professional apprenticeship context.", owner: "School of SNBE", contact: "c25iZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/building-information-modelling-project-management-higher-level-apprenticeship-msc/", tags: ["Digital", "BIM", "HLA", "EPS"] },
+            { id: 11, uni: "QUB", level: "BEng / HLA", title: "Civil Engineering (HLA)", focus: "EPS Faculty HLA focusing on sustainable infrastructure and built environment management.", owner: "School of SNBE", contact: "c25iZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/undergraduate/civil-engineering-higher-level-apprenticeship-beng/", tags: ["Engineering", "Infrastructure", "HLA", "EPS"] },
+            { id: 12, uni: "QUB", level: "BEng / HLA", title: "Mechanical Engineering (HLA)", focus: "Critical for heat pump design, HVAC optimization, and energy system integration. EPS Faculty HLA.", owner: "School of Mechanical & Aerospace", contact: "c21hZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/undergraduate/mechanical-engineering-higher-level-apprenticeship-beng/", tags: ["Engineering", "Energy", "HLA", "EPS"] },
+            { id: 13, uni: "QUB", level: "MSc / HLA", title: "Software Development (HLA)", focus: "EPS Faculty HLA for smart grid management and energy performance monitoring software.", owner: "School of EEECS", contact: "ZWVlY3NAcXViLmFjLnVr", link: "https://www.qub.ac.uk/courses/postgraduate-taught/software-development-higher-level-apprenticeship-msc/", tags: ["Digital", "Energy Management", "HLA", "EPS"] },
+
+            // UU Courses
             { id: 7, uni: "UU", level: "MSc", title: "Renewable Energy & Management", focus: "Managing energy processes in buildings and specifying technical low-carbon solutions.", owner: "Dr. Ming Jun Huang", contact: "bWouaHVhbmdAdWxzdGVyLmFjLnVr", link: "https://www.ulster.ac.uk/courses/202526/renewable-energy-and-energy-management-33160", tags: ["Energy", "Systems", "Technical"] },
             { id: 8, uni: "UU", level: "MSc", title: "Sustainable Management", focus: "Governance, reporting, and management of green infrastructure projects.", owner: "UU Business School", contact: "YnVzaW5lc3NAdWxzdGVyLmFjLnVr", link: "https://www.ulster.ac.uk/courses/202526/sustainable-management-31835", tags: ["Management", "Governance"] },
             { id: 9, uni: "UU", level: "BSc", title: "Energy", focus: "Designing, sizing, and performance monitoring of domestic energy systems.", owner: "Prof. Neil Hewitt", contact: "bmouaGV3aXR0QHVsc3Rlci5hYy51aw==", link: "https://www.ulster.ac.uk/courses/202526/energy-31056", tags: ["Systems", "Undergraduate", "Design"] },
             { id: 10, uni: "UU", level: "BSc", title: "Architectural Tech & Mgmt", focus: "Bridge between design and site; managing building fabric efficiency and compliance.", owner: "Belfast School of Architecture", contact: "YXJjaGl0ZWN0dXJlQHVsc3Rlci5hYy51aw==", link: "https://www.ulster.ac.uk/courses/202526/architectural-technology-and-management-31010", tags: ["Technical", "Management", "Design"] }
         ];
 
-        let state = {
-            filter: 'all',
-            search: ''
-        };
+        let state = { filter: 'all', search: '' };
 
-        /**
-         * Security: Decode Base64 emails only on user interaction
-         * This prevents bots from finding plain-text emails in the HTML source.
-         */
         const decodeContact = (encoded) => atob(encoded);
 
         function render() {
@@ -211,7 +174,8 @@
                 const matchesUni = state.filter === 'all' || c.uni === state.filter;
                 const matchesSearch = c.title.toLowerCase().includes(state.search.toLowerCase()) ||
                     c.focus.toLowerCase().includes(state.search.toLowerCase()) ||
-                    c.owner.toLowerCase().includes(state.search.toLowerCase());
+                    c.owner.toLowerCase().includes(state.search.toLowerCase()) ||
+                    c.tags.some(tag => tag.toLowerCase().includes(state.search.toLowerCase()));
                 return matchesUni && matchesSearch;
             });
 
@@ -225,12 +189,7 @@
                 filtered.forEach(course => {
                     const card = document.createElement('div');
                     card.className = "bg-white p-8 rounded-2xl border border-slate-200 shadow-sm card-hover flex flex-col justify-between animate-fade";
-
-                    const uniStyles = course.uni === 'QUB'
-                        ? 'bg-rose-50 text-rose-700 border-rose-100'
-                        : 'bg-indigo-50 text-indigo-700 border-indigo-100';
-
-                    // Email is kept encoded in the HTML until rendered to slightly deter simple scrapers
+                    const uniStyles = course.uni === 'QUB' ? 'bg-rose-50 text-rose-700 border-rose-100' : 'bg-indigo-50 text-indigo-700 border-indigo-100';
                     const contactEmail = decodeContact(course.contact);
 
                     card.innerHTML = `
@@ -241,14 +200,10 @@
                             </div>
                             <h3 class="text-xl font-extrabold text-slate-900 mb-3 leading-tight">${course.title}</h3>
                             <p class="text-sm text-slate-500 mb-6 leading-relaxed">${course.focus}</p>
-                            
                             <div class="flex flex-wrap gap-2 mb-8">
-                                ${course.tags.map(tag => `
-                                    <span class="px-2 py-1 bg-slate-50 text-slate-400 text-[9px] font-bold rounded border border-slate-100">#${tag.toUpperCase()}</span>
-                                `).join('')}
+                                ${course.tags.map(tag => `<span class="px-2 py-1 bg-slate-50 text-slate-400 text-[9px] font-bold rounded border border-slate-100">#${tag.toUpperCase()}</span>`).join('')}
                             </div>
                         </div>
-
                         <div class="mt-auto">
                             <div class="flex items-center gap-4 mb-6 p-3 bg-slate-50 rounded-xl border border-slate-100">
                                 <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white shadow-md">
@@ -256,13 +211,10 @@
                                 </div>
                                 <div class="overflow-hidden">
                                     <p class="font-bold text-slate-800 text-xs truncate">${course.owner}</p>
-                                    <a href="mailto:${contactEmail}" class="text-emerald-600 hover:text-emerald-700 text-[11px] font-medium transition-colors truncate block">
-                                        ${contactEmail}
-                                    </a>
+                                    <a href="mailto:${contactEmail}" class="text-emerald-600 hover:text-emerald-700 text-[11px] font-medium transition-colors truncate block">${contactEmail}</a>
                                 </div>
                             </div>
-                            <a href="${course.link}" target="_blank" rel="noopener noreferrer" 
-                                class="flex items-center justify-center gap-2 w-full py-4 bg-slate-900 hover:bg-black text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-slate-200">
+                            <a href="${course.link}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-4 bg-slate-900 hover:bg-black text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-slate-200">
                                 Official Prospectus <i class="fas fa-arrow-right text-[10px]"></i>
                             </a>
                         </div>
@@ -274,9 +226,7 @@
 
         window.updateUniversityFilter = (uni, el) => {
             state.filter = uni;
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.className = 'filter-btn px-6 py-3 rounded-lg text-sm font-bold transition-all text-slate-500 hover:bg-white/50';
-            });
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.className = 'filter-btn px-6 py-3 rounded-lg text-sm font-bold transition-all text-slate-500 hover:bg-white/50');
             el.className = 'filter-btn px-6 py-3 rounded-lg text-sm font-bold transition-all bg-white shadow-sm text-emerald-700';
             render();
         };
@@ -286,7 +236,6 @@
             render();
         });
 
-        // App Initialisation
         document.addEventListener('DOMContentLoaded', render);
     </script>
 </body>
