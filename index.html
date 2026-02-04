@@ -58,9 +58,15 @@
         <div class="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
         <div class="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="text-center md:text-left">
-                <div
-                    class="inline-block px-3 py-1 bg-emerald-500/20 rounded-full text-emerald-300 text-xs font-bold uppercase tracking-widest mb-4 border border-emerald-500/30">
-                    DfE Greenskills Action Plan
+                <div class="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">
+                    <div
+                        class="inline-block px-3 py-1 bg-emerald-500/20 rounded-full text-emerald-300 text-xs font-bold uppercase tracking-widest border border-emerald-500/30">
+                        DfE Greenskills Action Plan
+                    </div>
+                    <div
+                        class="inline-block px-3 py-1 bg-amber-500/20 rounded-full text-amber-300 text-xs font-bold uppercase tracking-widest border border-amber-500/30">
+                        Alpha Version V01 - Demo Only - Under Review
+                    </div>
                 </div>
                 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-3">GreenSkills NI Explorer</h1>
                 <p class="text-emerald-100 text-lg max-w-2xl opacity-90 font-light">
@@ -140,25 +146,25 @@
     <script>
         const courseData = [
             // QUB Standard Courses
-            { id: 1, uni: "QUB", level: "MSc", title: "Net Zero Engineering", focus: "Carbon footprinting, life cycle analysis, and technical pathways for building retrofit.", owner: "Dr. Neil Robinson", contact: "bi5yb2JpbnNvbkBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/net-zero-engineering-msc/", tags: ["Engineering", "Assessment", "Net Zero"] },
-            { id: 2, uni: "QUB", level: "MSc", title: "City Planning & Design", focus: "Low-carbon urban transition and RICS-accredited spatial planning for housing.", owner: "Dr. Neil Galway", contact: "bi5nYWx3YXlAcXViLmFjLnVr", link: "https://www.qub.ac.uk/courses/postgraduate-taught/city-planning-design-msc/", tags: ["Planning", "Design", "Policy"] },
-            { id: 3, uni: "QUB", level: "MSc", title: "Construction & Project Management", focus: "Managing the logistics, finance, and risks of large-scale housing decarbonisation projects.", owner: "Dr. Faris Elghaish", contact: "Zi5lbGdoYWlzaEBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/construction-project-management-msc/", tags: ["Management", "Finance", "Construction"] },
-            { id: 4, uni: "QUB", level: "MSc", title: "BIM Project Management", focus: "Digital twins and data-driven thermal efficiency design for existing building stock.", owner: "School of SNBE", contact: "c25iZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/building-information-modelling-project-management-msc/", tags: ["Digital", "BIM", "Design"] },
-            { id: 5, uni: "QUB", level: "MSc", title: "Leadership for Sustainable Dev", focus: "Strategic change management and coordination between government and industry.", owner: "Dr. Adewale Adenuga", contact: "YS5hZGVudWdhQHF1Yi5hYy51aw==", link: "https://www.qub.ac.uk/courses/postgraduate-taught/leadership-sustainable-development-msc/", tags: ["Leadership", "Strategy", "Policy"] },
-            { id: 6, uni: "QUB", level: "BSc", title: "Architecture", focus: "Foundational energy-efficient building fabric design and retrofit principles.", owner: "School of Architecture", contact: "YXJjaGl0ZWN0dXJlQHF1Yi5hYy51aw==", link: "https://www.qub.ac.uk/courses/undergraduate/architecture-bsc/", tags: ["Design", "Undergraduate"] },
+            { id: 1, uni: "QUB", level: "MSc", title: "Net Zero Engineering", focus: "Carbon footprinting, life cycle analysis, and technical pathways for building retrofit.", owner: "Dr. Neil Robinson", role: "Programme Director", contact: "bi5yb2JpbnNvbkBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/net-zero-engineering-msc/", tags: ["Engineering", "Assessment", "Net Zero"] },
+            { id: 2, uni: "QUB", level: "MSc", title: "City Planning & Design", focus: "Low-carbon urban transition and RICS-accredited spatial planning for housing.", owner: "Dr. Neil Galway", role: "Director of PG Studies", contact: "bi5nYWx3YXlAcXViLmFjLnVr", link: "https://www.qub.ac.uk/courses/postgraduate-taught/city-planning-design-msc/", tags: ["Planning", "Design", "Policy"] },
+            { id: 3, uni: "QUB", level: "MSc", title: "Construction & Project Management", focus: "Managing the logistics, finance, and risks of large-scale housing decarbonisation projects.", owner: "SNBE School Office", role: "General Inquiry", contact: "c25iZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/construction-project-management-msc/", tags: ["Management", "Finance", "Construction"] },
+            { id: 4, uni: "QUB", level: "MSc", title: "BIM Project Management", focus: "Digital twins and data-driven thermal efficiency design for existing building stock.", owner: "SNBE School Office", role: "General Inquiry", contact: "c25iZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/building-information-modelling-project-management-msc/", tags: ["Digital", "BIM", "Design"] },
+            { id: 5, uni: "QUB", level: "MSc", title: "Leadership for Sustainable Dev", focus: "Strategic change management and coordination between government and industry.", owner: "SNBE School Office", role: "General Inquiry", contact: "c25iZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/leadership-sustainable-development-msc/", tags: ["Leadership", "Strategy", "Policy"] },
+            { id: 6, uni: "QUB", level: "BSc", title: "Architecture", focus: "Foundational energy-efficient building fabric design and retrofit principles.", owner: "Architecture Dept", role: "General Inquiry", contact: "YXJjaGl0ZWN0dXJlQHF1Yi5hYy51aw==", link: "https://www.qub.ac.uk/courses/undergraduate/architecture-bsc/", tags: ["Design", "Undergraduate"] },
 
-            // QUB HLA Courses (Separate Offerings)
-            { id: 14, uni: "QUB", level: "MSc / HLA", title: "Construction & Project Management (HLA)", focus: "EPS Faculty Higher Level Apprenticeship pathway for advanced construction management.", owner: "Dr. Faris Elghaish", contact: "Zi5lbGdoYWlzaEBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/construction-project-management-higher-level-apprenticeship-msc/", tags: ["Management", "HLA", "EPS", "Construction"] },
-            { id: 15, uni: "QUB", level: "MSc / HLA", title: "BIM Project Management (HLA)", focus: "Dedicated EPS HLA pathway focusing on Digital Twins and BIM in a professional apprenticeship context.", owner: "School of SNBE", contact: "c25iZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/building-information-modelling-project-management-higher-level-apprenticeship-msc/", tags: ["Digital", "BIM", "HLA", "EPS"] },
-            { id: 11, uni: "QUB", level: "BEng / HLA", title: "Civil Engineering (HLA)", focus: "EPS Faculty HLA focusing on sustainable infrastructure and built environment management.", owner: "School of SNBE", contact: "c25iZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/undergraduate/civil-engineering-higher-level-apprenticeship-beng/", tags: ["Engineering", "Infrastructure", "HLA", "EPS"] },
-            { id: 12, uni: "QUB", level: "BEng / HLA", title: "Mechanical Engineering (HLA)", focus: "Critical for heat pump design, HVAC optimization, and energy system integration. EPS Faculty HLA.", owner: "School of Mechanical & Aerospace", contact: "c21hZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/undergraduate/mechanical-engineering-higher-level-apprenticeship-beng/", tags: ["Engineering", "Energy", "HLA", "EPS"] },
-            { id: 13, uni: "QUB", level: "MSc / HLA", title: "Software Development (HLA)", focus: "EPS Faculty HLA for smart grid management and energy performance monitoring software.", owner: "School of EEECS", contact: "ZWVlY3NAcXViLmFjLnVr", link: "https://www.qub.ac.uk/courses/postgraduate-taught/software-development-higher-level-apprenticeship-msc/", tags: ["Digital", "Energy Management", "HLA", "EPS"] },
+            // QUB HLA Courses
+            { id: 14, uni: "QUB", level: "MSc / HLA", title: "Construction & Project Mgmt (HLA)", focus: "EPS Faculty Higher Level Apprenticeship pathway for advanced construction management.", owner: "SNBE School Office", role: "General Inquiry", contact: "c25iZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/construction-project-management-higher-level-apprenticeship-msc/", tags: ["Management", "HLA", "EPS", "Construction"] },
+            { id: 15, uni: "QUB", level: "MSc / HLA", title: "BIM Project Management (HLA)", focus: "Dedicated EPS HLA pathway focusing on Digital Twins and BIM in a professional context.", owner: "SNBE School Office", role: "General Inquiry", contact: "c25iZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/postgraduate-taught/building-information-modelling-project-management-higher-level-apprenticeship-msc/", tags: ["Digital", "BIM", "HLA", "EPS"] },
+            { id: 11, uni: "QUB", level: "BEng / HLA", title: "Civil Engineering (HLA)", focus: "EPS Faculty HLA focusing on sustainable infrastructure and built environment management.", owner: "SNBE School Office", role: "General Inquiry", contact: "c25iZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/undergraduate/civil-engineering-higher-level-apprenticeship-beng/", tags: ["Engineering", "Infrastructure", "HLA", "EPS"] },
+            { id: 12, uni: "QUB", level: "BEng / HLA", title: "Mechanical Engineering (HLA)", focus: "Critical for heat pump design and energy system integration. EPS Faculty HLA.", owner: "SMAE School Office", role: "General Inquiry", contact: "c21hZUBxdWIuYWMudWs=", link: "https://www.qub.ac.uk/courses/undergraduate/mechanical-engineering-higher-level-apprenticeship-beng/", tags: ["Engineering", "Energy", "HLA", "EPS"] },
+            { id: 13, uni: "QUB", level: "MSc / HLA", title: "Software Development (HLA)", focus: "EPS Faculty HLA for smart grid management and energy performance monitoring software.", owner: "EEECS School Office", role: "General Inquiry", contact: "ZWVlY3NAcXViLmFjLnVr", link: "https://www.qub.ac.uk/courses/postgraduate-taught/software-development-higher-level-apprenticeship-msc/", tags: ["Digital", "Energy Management", "HLA", "EPS"] },
 
             // UU Courses
-            { id: 7, uni: "UU", level: "MSc", title: "Renewable Energy & Management", focus: "Managing energy processes in buildings and specifying technical low-carbon solutions.", owner: "Dr. Ming Jun Huang", contact: "bWouaHVhbmdAdWxzdGVyLmFjLnVr", link: "https://www.ulster.ac.uk/courses/202526/renewable-energy-and-energy-management-33160", tags: ["Energy", "Systems", "Technical"] },
-            { id: 8, uni: "UU", level: "MSc", title: "Sustainable Management", focus: "Governance, reporting, and management of green infrastructure projects.", owner: "UU Business School", contact: "YnVzaW5lc3NAdWxzdGVyLmFjLnVr", link: "https://www.ulster.ac.uk/courses/202526/sustainable-management-31835", tags: ["Management", "Governance"] },
-            { id: 9, uni: "UU", level: "BSc", title: "Energy", focus: "Designing, sizing, and performance monitoring of domestic energy systems.", owner: "Prof. Neil Hewitt", contact: "bmouaGV3aXR0QHVsc3Rlci5hYy51aw==", link: "https://www.ulster.ac.uk/courses/202526/energy-31056", tags: ["Systems", "Undergraduate", "Design"] },
-            { id: 10, uni: "UU", level: "BSc", title: "Architectural Tech & Mgmt", focus: "Bridge between design and site; managing building fabric efficiency and compliance.", owner: "Belfast School of Architecture", contact: "YXJjaGl0ZWN0dXJlQHVsc3Rlci5hYy51aw==", link: "https://www.ulster.ac.uk/courses/202526/architectural-technology-and-management-31010", tags: ["Technical", "Management", "Design"] }
+            { id: 7, uni: "UU", level: "MSc", title: "Renewable Energy & Mgmt", focus: "Managing energy processes in buildings and specifying technical low-carbon solutions.", owner: "Built Environment Office", role: "General Inquiry", contact: "YnVpbHRlbnZpcm9ubWVudEB1bHN0ZXIuYWMudWs=", link: "https://www.ulster.ac.uk/courses/202526/renewable-energy-and-energy-management-33160", tags: ["Energy", "Systems", "Technical"] },
+            { id: 8, uni: "UU", level: "MSc", title: "Sustainable Management", focus: "Governance, reporting, and management of green infrastructure projects.", owner: "UU Business School", role: "General Inquiry", contact: "YnVzaW5lc3NAdWxzdGVyLmFjLnVr", link: "https://www.ulster.ac.uk/courses/202526/sustainable-management-31835", tags: ["Management", "Governance"] },
+            { id: 9, uni: "UU", level: "BSc", title: "Energy", focus: "Designing, sizing, and performance monitoring of domestic energy systems.", owner: "Prof. Neil Hewitt", role: "Academic Lead", contact: "bmouaGV3aXR0QHVsc3Rlci5hYy51aw==", link: "https://www.ulster.ac.uk/courses/202526/energy-36987", tags: ["Systems", "Undergraduate", "Design"] },
+            { id: 10, uni: "UU", level: "BSc", title: "Architectural Tech & Mgmt", focus: "Bridge between design and site; managing building fabric efficiency and compliance.", owner: "Belfast Architecture School", role: "General Inquiry", contact: "YXJjaGl0ZWN0dXJlQHVsc3Rlci5hYy51aw==", link: "https://www.ulster.ac.uk/courses/202526/architectural-technology-and-management-31010", tags: ["Technical", "Management", "Design"] }
         ];
 
         let state = { filter: 'all', search: '' };
@@ -175,6 +181,7 @@
                 const matchesSearch = c.title.toLowerCase().includes(state.search.toLowerCase()) ||
                     c.focus.toLowerCase().includes(state.search.toLowerCase()) ||
                     c.owner.toLowerCase().includes(state.search.toLowerCase()) ||
+                    c.role.toLowerCase().includes(state.search.toLowerCase()) ||
                     c.tags.some(tag => tag.toLowerCase().includes(state.search.toLowerCase()));
                 return matchesUni && matchesSearch;
             });
@@ -192,30 +199,46 @@
                     const uniStyles = course.uni === 'QUB' ? 'bg-rose-50 text-rose-700 border-rose-100' : 'bg-indigo-50 text-indigo-700 border-indigo-100';
                     const contactEmail = decodeContact(course.contact);
 
+                    // Button logic for unavailable links
+                    const buttonLabel = course.disabled ? "Link Not Available" : "Official Prospectus";
+                    const buttonStyles = course.disabled
+                        ? "bg-slate-200 text-slate-400 cursor-not-allowed pointer-events-none"
+                        : "bg-slate-900 hover:bg-black text-white shadow-lg shadow-slate-200";
+                    const buttonIcon = course.disabled ? "" : '<i class="fas fa-arrow-right text-[10px]"></i>';
+
                     card.innerHTML = `
                         <div>
                             <div class="flex justify-between items-center mb-6">
                                 <span class="px-3 py-1 text-[10px] font-black rounded-lg border uppercase tracking-wider ${uniStyles}">${course.uni}</span>
                                 <span class="text-xs text-slate-400 font-bold tracking-tight bg-slate-100 px-2 py-1 rounded">${course.level}</span>
                             </div>
-                            <h3 class="text-xl font-extrabold text-slate-900 mb-3 leading-tight">${course.title}</h3>
+                            <h3 class="text-xl font-extrabold text-slate-900 mb-4 leading-tight">${course.title}</h3>
+                            
+                            <div class="flex items-center gap-1.5 mb-2 text-emerald-700 font-bold text-[10px] uppercase tracking-wider">
+                                <i class="fas fa-leaf text-[9px]"></i>
+                                <span>GreenSkills Alignment</span>
+                            </div>
+                            
                             <p class="text-sm text-slate-500 mb-6 leading-relaxed">${course.focus}</p>
                             <div class="flex flex-wrap gap-2 mb-8">
                                 ${course.tags.map(tag => `<span class="px-2 py-1 bg-slate-50 text-slate-400 text-[9px] font-bold rounded border border-slate-100">#${tag.toUpperCase()}</span>`).join('')}
                             </div>
                         </div>
                         <div class="mt-auto">
-                            <div class="flex items-center gap-4 mb-6 p-3 bg-slate-50 rounded-xl border border-slate-100">
-                                <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white shadow-md">
+                            <div class="flex items-center gap-4 mb-6 p-4 bg-slate-50 rounded-2xl border border-slate-100 relative overflow-hidden group">
+                                <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white shadow-md flex-shrink-0">
                                     <i class="fas fa-user-check text-xs"></i>
                                 </div>
                                 <div class="overflow-hidden">
                                     <p class="font-bold text-slate-800 text-xs truncate">${course.owner}</p>
-                                    <a href="mailto:${contactEmail}" class="text-emerald-600 hover:text-emerald-700 text-[11px] font-medium transition-colors truncate block">${contactEmail}</a>
+                                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-tight truncate mb-1 opacity-80">${course.role}</p>
+                                    <a href="mailto:${contactEmail}" class="text-emerald-600 hover:text-emerald-700 text-[11px] font-medium transition-colors truncate block">
+                                        ${contactEmail}
+                                    </a>
                                 </div>
                             </div>
-                            <a href="${course.link}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-4 bg-slate-900 hover:bg-black text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-slate-200">
-                                Official Prospectus <i class="fas fa-arrow-right text-[10px]"></i>
+                            <a href="${course.link}" ${course.disabled ? 'tabindex="-1"' : 'target="_blank" rel="noopener noreferrer"'} class="flex items-center justify-center gap-2 w-full py-4 rounded-xl text-sm font-bold transition-all ${buttonStyles}">
+                                ${buttonLabel} ${buttonIcon}
                             </a>
                         </div>
                     `;
